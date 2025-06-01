@@ -10,6 +10,15 @@ vim.g.have_nerd_font = true
 -- See `:help vim.o`
 --  For more options, you can see `:help option-list`
 
+-- Make Markdown hide syntax characters
+vim.o.conceallevel = 1
+
+-- Disable line wrapping
+vim.o.wrap = false
+
+-- Prevent wrapping in middle of words
+vim.o.linebreak = true
+
 -- Make line numbers default
 vim.o.number = true
 
