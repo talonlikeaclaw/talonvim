@@ -92,6 +92,18 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Enable Oil file view functionality
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'open parent directory' })
+
+-- Save buffer
+vim.keymap.set({ 'i', 'x', 'n', 's' }, '<leader>cs', '<cmd>w<cr><esc>', { desc = 'save file' })
+
+-- Quit buffer
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'quit buffer', noremap = true, silent = true })
+
+-- Quit Talonvim
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'quit talonvim', noremap = true, silent = true })
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
@@ -99,6 +111,9 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>w-', '<cmd>sp<CR>', { desc = 'split across', remap = true })
+vim.keymap.set('n', '<leader>w|', '<cmd>vs<CR>', { desc = 'split down', remap = true })
 
 ---------------------------------------------------------------------
 -- [[ Basic Autocommands ]]
@@ -235,6 +250,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>C', '<cmd>Telescope find_files cwd=~/.config/nvim<CR>', { desc = 'configuration' })
 
       vim.keymap.set('n', '<leader>/', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -507,6 +523,7 @@ require('lazy').setup({
             end,
           },
         },
+
         opts = {},
       },
       'folke/lazydev.nvim',
