@@ -575,17 +575,16 @@ require('lazy').setup({
   {
     'folke/tokyonight.nvim',
     priority = 1000,
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = true },
-        },
-      }
-      vim.cmd.colorscheme 'tokyonight-night'
-    end,
+    opts = {
+      transparent = true,
+      style = 'night',
+      styles = {
+        sidebars = 'transparent',
+        floats = 'transparent',
+        comments = { italic = true },
+      },
+    },
   },
-
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -690,3 +689,5 @@ require('lazy').setup({
     },
   },
 })
+
+vim.cmd.colorscheme 'tokyonight-night'
