@@ -26,7 +26,7 @@ return {
         {
           pane = 2,
           section = 'terminal',
-          cmd = 'cmatrix -b -r -u 6',
+          cmd = 'cmatrix -b -r -u 8',
           height = 5,
           padding = 2,
         },
