@@ -8,7 +8,7 @@ return {
       skip_confirm_for_simple_edits = true,
       columns = {
         'icon',
-        -- 'permissions',
+        'permissions',
         -- 'size',
         -- 'mtime',
       },
