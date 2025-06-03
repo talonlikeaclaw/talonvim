@@ -1,0 +1,63 @@
+-- Useful plugin to show you pending keybinds.
+return {
+  'folke/which-key.nvim',
+  event = 'VimEnter',
+  opts = {
+    delay = 0,
+    preset = 'helix',
+    expand = 0,
+    icons = {
+      mappings = vim.g.have_nerd_font,
+      keys = vim.g.have_nerd_font and {} or {
+        Up = '<Up> ',
+        Down = '<Down> ',
+        Left = '<Left> ',
+        Right = '<Right> ',
+        C = '<C-…> ',
+        M = '<M-…> ',
+        D = '<D-…> ',
+        S = '<S-…> ',
+        CR = '<CR> ',
+        Esc = '<Esc> ',
+        ScrollWheelDown = '<ScrollWheelDown> ',
+        ScrollWheelUp = '<ScrollWheelUp> ',
+        NL = '<NL> ',
+        BS = '<BS> ',
+        Space = '<Space> ',
+        Tab = '<Tab> ',
+        F1 = '<F1>',
+        F2 = '<F2>',
+        F3 = '<F3>',
+        F4 = '<F4>',
+        F5 = '<F5>',
+        F6 = '<F6>',
+        F7 = '<F7>',
+        F8 = '<F8>',
+        F9 = '<F9>',
+        F10 = '<F10>',
+        F11 = '<F11>',
+        F12 = '<F12>',
+      },
+    },
+    spec = {
+      {
+        mode = { 'n', 'v' },
+        { '<leader>a', group = 'AI', icon = { icon = '󰵅 ', color = 'red' } },
+        { '<leader>c', group = 'Code', icon = { icon = ' ', color = 'red' } },
+        { '<leader>d', group = 'Debug', icon = { icon = '󰃤 ', color = 'azure' } },
+        { '<leader>g', group = 'Git', icon = { icon = '󰈸 ', color = 'orange' } },
+        { '<leader>s', group = 'Search', icon = { icon = '  ', color = 'cyan' } },
+        { '<leader>u', group = 'UI', icon = { icon = '󰵅 ', color = 'green' } },
+        { '<leader>w', group = 'Window' },
+        { '<leader>C', icon = { icon = '󰙵 ' } },
+      },
+    },
+    win = {
+      no_overlap = false,
+      title_pos = 'center',
+    },
+    sort = { 'alphanum' },
+  },
+}
+
+-- vim: ts=2 sts=2 sw=2 et
