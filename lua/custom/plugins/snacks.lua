@@ -80,21 +80,21 @@ return {
       function()
         Snacks.zen()
       end,
-      desc = 'toggle zen mode',
+      desc = 'Zen mode',
     },
     {
       '<leader>gg',
       function()
         Snacks.lazygit()
       end,
-      desc = 'lazygit',
+      desc = 'Lazygit',
     },
     {
       '<c-/>',
       function()
         Snacks.terminal()
       end,
-      desc = 'toggle terminal',
+      desc = 'Terminal',
     },
   },
   init = function()
