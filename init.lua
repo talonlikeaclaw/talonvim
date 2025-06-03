@@ -73,11 +73,11 @@ require('lazy').setup({
       spec = {
         {
           mode = { 'n', 'v' },
-          { '<leader>c', group = 'Code', icon = { icon = '󰃤', color = 'red' } },
-          { '<leader>d', group = 'Debug', icon = { icon = ' ', color = 'azure' } },
-          { '<leader>g', group = 'Git', icon = { icon = '󰈸', color = 'orange' } },
-          { '<leader>s', group = 'Search', icon = { icon = ' ', color = 'cyan' } },
-          { '<leader>t', group = 'Tools', icon = { icon = ' ', color = 'grey' } },
+          { '<leader>a', group = 'AI', icon = { icon = '󰵅 ', color = 'red' } },
+          { '<leader>c', group = 'Code', icon = { icon = ' ', color = 'red' } },
+          { '<leader>d', group = 'Debug', icon = { icon = '󰃤 ', color = 'azure' } },
+          { '<leader>g', group = 'Git', icon = { icon = '󰈸 ', color = 'orange' } },
+          { '<leader>s', group = 'Search', icon = { icon = '  ', color = 'cyan' } },
           { '<leader>u', group = 'UI', icon = { icon = '󰵅 ', color = 'green' } },
           { '<leader>w', group = 'Window' },
           { '<leader>C', icon = { icon = '󰙵 ' } },
@@ -132,7 +132,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search Resume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Search Buffers' })
-      vim.keymap.set('n', '<leader>C', '<cmd>Telescope find_files cwd=~/.config/nvim<CR>', { desc = 'Configuration' })
+      vim.keymap.set('n', '<leader>C', '<cmd>Telescope find_files cwd=~/.config/nvim<CR>', { desc = 'Config' })
 
       vim.keymap.set('n', '<leader>/', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -258,16 +258,6 @@ require('lazy').setup({
                 vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
               end,
             })
-          end
-
-          -- The following code creates a keymap to toggle inlay hints in your
-          -- code, if the language server you are using supports them
-          --
-          -- This may be unwanted, since they displace some of your code
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, 'Toggle Inlay Hints')
           end
         end,
       })
