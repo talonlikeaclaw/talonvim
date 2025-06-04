@@ -46,6 +46,7 @@ return {
         { '<leader>c', group = 'Code', icon = { icon = ' ', color = 'red' } },
         { '<leader>d', group = 'Debug', icon = { icon = '󰃤 ', color = 'azure' } },
         { '<leader>g', group = 'Git', icon = { icon = '󰈸 ', color = 'orange' } },
+        { '<leader>l', group = 'Lazy', icon = { icon = ' ', color = 'orange' } },
         { '<leader>s', group = 'Search', icon = { icon = '  ', color = 'cyan' } },
         { '<leader>u', group = 'UI', icon = { icon = '󰵅 ', color = 'green' } },
         { '<leader>w', group = 'Window' },

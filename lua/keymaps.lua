@@ -14,6 +14,8 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit Terminal Mode' }
 -- Enable Oil file view functionality
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Open Parent Directory' })
 
+vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'Lazy' })
+
 -- Save buffer
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<leader>cs', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
