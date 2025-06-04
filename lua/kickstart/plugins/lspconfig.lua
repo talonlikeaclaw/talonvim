@@ -136,9 +136,54 @@ return {
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        pyright = {},
+        html = {},
+        emmet_ls = {
+          capabilities = capabilities,
+          filetypes = { 'html', 'css' },
+        },
+        cssls = {},
+        eslint = {
+          capabilities = capabilities,
+          filetypes = { 'javascript' },
+        },
+
+        ts_ls = {
+          capabilities = capabilities,
+          filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+        },
+        pylsp = {
+          capabilities = capabilities,
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  maxLineLength = 88,
+                  ignore = { 'E501', 'D100' },
+                },
+                pylint = {
+                  enabled = true,
+                  args = { '--disable=C0116', '--disable=C0114', '--disable=C0301', '--disable=C0303' },
+                },
+                pyflakes = { enabled = true },
+                black = { enabled = true },
+                autopep8 = { enabled = false },
+              },
+            },
+          },
+        },
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
+                venvPath = '.',
+                venv = '.venv',
+              },
+            },
+          },
+        },
         rust_analyzer = {},
         lua_ls = {
           -- cmd = { ... },
@@ -162,7 +207,14 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {
+          'lua_ls',
+          'cssls',
+          'marksman',
+          'eslint',
+          'ts_ls',
+          'pylsp',
+        },
         automatic_installation = false,
         handlers = {
           function(server_name)
