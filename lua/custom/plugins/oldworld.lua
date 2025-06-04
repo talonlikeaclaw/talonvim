@@ -16,7 +16,7 @@ return {
       neo_tree = true,
       noice = false,
       notify = true,
-      telescope = true,
+      telescope = false,
       treesitter = true,
     },
     highlight_overrides = {
