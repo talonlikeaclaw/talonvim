@@ -4,7 +4,7 @@ return {
     version = '*',
     opts = {
       size = 20,
-      open_mapping = [[<leader>t]],
+      open_mapping = [[<leader>tt]],
       shade_terminals = true,
       shading_factor = 2,
       start_in_insert = true,
