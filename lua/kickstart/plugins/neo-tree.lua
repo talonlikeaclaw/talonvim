@@ -11,7 +11,7 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>n', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
@@ -19,6 +19,18 @@ return {
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    event_handlers = {
+
+      {
+        event = 'file_open_requested',
+        handler = function()
+          -- auto close
+          -- vim.cmd("Neotree close")
+          -- OR
+          require('neo-tree.command').execute { action = 'close' }
+        end,
       },
     },
   },

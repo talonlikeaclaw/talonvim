@@ -47,6 +47,7 @@ return {
         { '<leader>d', group = 'Debug', icon = { icon = '󰃤 ', color = 'azure' } },
         { '<leader>g', group = 'Git', icon = { icon = '󰈸 ', color = 'orange' } },
         { '<leader>l', group = 'Lazy', icon = { icon = ' ', color = 'purple' } },
+        { '<leader>n', group = 'Neotree', icon = { icon = ' ', color = 'pink' } },
         { '<leader>o', group = 'Obsidian', icon = { icon = '󰵅 ', color = 'green' } },
         { '<leader>t', group = 'Terminal', icon = { icon = ' ', color = 'pink' } },
         { '<leader>od', group = 'Delete', icon = { icon = '󰵅 ', color = 'green' } },
