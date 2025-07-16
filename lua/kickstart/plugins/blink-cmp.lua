@@ -32,21 +32,15 @@ return {
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        -- 'default' (recommended) for mappings similar to built-in completions
-        -- For an understanding of why the 'default' preset is recommended,
-        -- you will need to read `:help ins-completion`
-        --
-        -- All presets have the following mappings:
-        -- <tab>/<s-tab>: move to right/left of your snippet expansion
-        -- <c-space>: Open menu or open docs if already open
-        -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
-        -- <c-e>: Hide menu
-        -- <c-k>: Toggle signature help
-        -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
-        ['<C-k>'] = { 'select_prev', 'fallback' },
-        ['<C-j>'] = { 'select_next', 'fallback' },
-        ['<CR>'] = { 'accept', 'fallback' },
+        ['<C-y>'] = { 'snippet_backward', 'fallback' },
+        ['<C-e>'] = { 'snippet_forward', 'fallback' },
+        ['<C-h>'] = { 'accept', 'fallback' },
+        ['<Esc>'] = { 'hide', 'fallback' },
+        ['<C-f>'] = { 'select_prev', 'fallback' },
+        ['<C-p>'] = { 'select_next', 'fallback' },
+        ['<CR>'] = { 'fallback' },
+        ['<Tab>'] = { 'fallback' },
+        ['<S-Tab>'] = { 'fallback' },
       },
 
       appearance = {
